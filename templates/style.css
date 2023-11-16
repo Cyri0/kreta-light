@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    margin: 0;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 800px;
+    background-color: lightgray;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 5fr;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.wrapper span{
+    padding: 5px;
+}
