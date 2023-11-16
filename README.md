@@ -1,6 +1,6 @@
 ## project működésre bírása
 
-`git clone [https://github.com/Cyri0/pizza.git](https://github.com/Cyri0/kreta-light.git)`
+`git clone https://github.com/Cyri0/pizza.git`
 
 `python -m venv .`
 
