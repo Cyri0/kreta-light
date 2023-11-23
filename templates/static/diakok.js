@@ -16,7 +16,4 @@ function generateWrapper(nev,osztaly,jegyek){
 }
 
 document.body.innerHTML += generateWrapper("Nemes Tamás", "9.B",[5,2,5,4,5])
-
-document.body.innerHTML += generateWrapper("Nemes Tamara", "11.B",[2,2,2,4,5])
-
 document.body.innerHTML += generateWrapper("Nemes Tamara", "11.B",[2,2,2,4,5])
