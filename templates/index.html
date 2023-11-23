@@ -9,6 +9,23 @@
 <body>
     
     <h1>Kréta</h1>
+
+    <form action="grading/" method="POST">
+        {% csrf_token %}
+        <label for="diak">Diák neve: </label>
+        <select name="student" id="diak"></select><br>
+        <label for="tantargy">Tantárgy: </label>
+        <input type="text" name="subject" id="tantargy"><br>
+        <label for="jegy">Jegy: </label>
+        <input type="number" min="1" max="5" name="grade" id="jegy" value="5"><br>
+
+        <label for="datum">Dátum:</label>
+        <input type="date" name="date" id="datum"><br>
+
+        <input type="submit" value="Beírom"><br>
+    </form>
+
+
     <script src="static/diakok.js"></script>
 
 </body>

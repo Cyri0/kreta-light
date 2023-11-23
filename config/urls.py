@@ -25,5 +25,6 @@ def main(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('diakok/', views.getAllStudents),
-    path('', main)
+    path('grading/', views.doGrading),
+    path('', main, name="main")
 ]

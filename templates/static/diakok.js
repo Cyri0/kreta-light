@@ -15,21 +15,20 @@ function generateWrapper(nev,osztaly,jegyek){
     </div>`
 }
 
-// 
+function generateOption(id, name){
+    let o = `<option value="${id}">${name}</option>`
+    document.getElementById("diak").innerHTML += o
+}
 
 fetch('diakok/')
 .then(res => res.json())
 .then(students => {
     console.log(students);
-
     students.forEach( student => {
-        let name = student.name
         let school_class = `${student.school_class.grade}.${student.school_class.code}`
 
-        // let grades = []
-        // student.grades.forEach( grade => {grades.push(grade.value)} )
+        generateOption(student.id, student.name)
 
-        document.body.innerHTML += generateWrapper(name, school_class, student.grades)
-
+        document.body.innerHTML += generateWrapper(student.name, school_class, student.grades)
     } )
 })
