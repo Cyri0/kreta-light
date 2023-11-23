@@ -2,7 +2,7 @@ function generateWrapper(nev,osztaly,jegyek){
     jegyDOM = ""
 
     jegyek.forEach(jegy => {
-        jegyDOM += `<span title="Fizika - 2023.11.16.">${jegy}</span>`
+        jegyDOM += `<span title="${jegy.subject} - ${jegy.date}">${jegy.value}</span>`
     });
 
     return `
@@ -15,5 +15,21 @@ function generateWrapper(nev,osztaly,jegyek){
     </div>`
 }
 
-document.body.innerHTML += generateWrapper("Nemes Tamás", "9.B",[5,2,5,4,5])
-document.body.innerHTML += generateWrapper("Nemes Tamara", "11.B",[2,2,2,4,5])
+// 
+
+fetch('diakok/')
+.then(res => res.json())
+.then(students => {
+    console.log(students);
+
+    students.forEach( student => {
+        let name = student.name
+        let school_class = `${student.school_class.grade}.${student.school_class.code}`
+
+        // let grades = []
+        // student.grades.forEach( grade => {grades.push(grade.value)} )
+
+        document.body.innerHTML += generateWrapper(name, school_class, student.grades)
+
+    } )
+})
